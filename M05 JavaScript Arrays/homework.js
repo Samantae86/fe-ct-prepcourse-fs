@@ -135,20 +135,30 @@ function diaDeLaSemana(numeroDeDia) {
    if (numeroDeDia === 1 || numeroDeDia === 7) {
       return "Es fin de semana";
     } else {
-      return "Es día laboral";
+      return "Es dia laboral";
     }
 }
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
-   
+   var numeroString= num.toString();
+   var numeroAArreglo = numeroString.split('');
+   if (numeroAArreglo[0] === '9'){
+      return true;
+   } return false;
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   var compara=array[0];
+    for (let i = 1; i<array.length;i++){
+         if (compara === array[i]){
+            return true
+         }return false;
+    }
 }
 
 function mesesDelAño(array) {
@@ -156,19 +166,48 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   arrayNuevo =[];
+   for (let i = 0; i<array.length;i++) {
+      if (array[i] === "Enero" || array[i] === "Marzo"  || array[i] === "Noviembre" ){
+         arrayNuevo.push(array[i]);
+      } 
+      
+   }
+   if (arrayNuevo.length === 3){
+      return arrayNuevo;
+   } return "No se encontraron los meses pedidos";
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   
+   var resultados=[];
+   
+   for (let i = 0; i <= 10; i++){
+      resultados.push(6*i);
+   } 
+      return resultados;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+ 
+   var mayoresACien = array.map(function(elemento) { 
+                                    if (elemento > 100) { 
+                                       return elemento; 
+                                    } 
+                                 }).filter(function(elemento) { 
+                                    return elemento !== undefined; 
+                                 });//Se utiliza el método filter para eliminar los elementos undefined del arreglo mayoresACien 
+                                 //y obtener un nuevo arreglo que solo contiene los valores mayores a 100.
+                     return mayoresACien; 
 }
+   
+
 
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
@@ -181,6 +220,17 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var sumaDos=num;
+   array=[];
+      for (let i = 0; i < 10; i++){
+         sumaDos = sumaDos + 2;
+         array.push(sumaDos);
+            if (sumaDos === i){
+               return "Se interrumpió la ejecución";
+               //break;
+            }
+      }
+   return array;   
 }
 
 function continueStatement(num) {
@@ -190,6 +240,17 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var sumaDos=num;
+   array=[];
+      for (let i = 0; i < 10; i++){
+         if (i === 5){
+            continue;
+         }
+         sumaDos = sumaDos + 2;
+         array.push(sumaDos);
+            
+      }
+   return array;   
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
