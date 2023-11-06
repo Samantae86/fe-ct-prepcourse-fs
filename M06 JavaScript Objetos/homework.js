@@ -141,7 +141,10 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
       precioFinal = (objetoProducto.precio) - (objetoProducto.precio * objetoProducto.porcentajeDeDescuento);
       return precioFinal;
    } 
-   return objetoProducto; /* */
+
+   return objetoProducto; 
+
+
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

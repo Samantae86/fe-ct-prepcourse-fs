@@ -87,7 +87,7 @@ function filter(arrayOfStrings) {
          }
    }
    return newArray;
-/* */
+
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
